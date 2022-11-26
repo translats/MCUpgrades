@@ -1,0 +1,53 @@
+package me.alvsch.mcupgrades.items;
+
+import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactive;
+import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
+import io.github.thebusybiscuit.slimefun4.core.attributes.WitherProof;
+import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
+import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Wither;
+import org.bukkit.inventory.ItemStack;
+
+public class FireCake extends SlimefunItem implements Radioactive, WitherProof {
+
+    public FireCake(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+        super(itemGroup, item, recipeType, recipe);
+    }
+
+    @Override
+    public Radioactivity getRadioactivity() {
+        return Radioactivity.HIGH;
+    }
+
+    @Override
+    public void onAttack(Block block, Wither wither) {
+        wither.setHealth(0);
+    }
+
+
+    @Override
+    public void preRegister() {
+        BlockUseHandler blockUseHandler = this::onBlockRightClick;
+        addItemHandler(blockUseHandler);
+
+        ItemUseHandler itemUseHandler = this::onItemUseRightClick;
+        addItemHandler(blockUseHandler);
+    }
+
+    private void onBlockRightClick(PlayerRightClickEvent event) {
+        event.cancel();
+        event.getPlayer().setFireTicks(5 * 20);
+    }
+
+    private void onItemUseRightClick(PlayerRightClickEvent event) {
+        event.getPlayer().giveExpLevels(1);
+    }
+
+
+}
