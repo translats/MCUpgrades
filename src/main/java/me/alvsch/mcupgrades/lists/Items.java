@@ -18,7 +18,7 @@ public final class Items {
     public static final SlimefunItemStack ENERGY_BLADE_MK1 = new SlimefunItemStack(
             "ENERGY_BLADE_MK1",
             Material.DIAMOND_SWORD,
-            "&3Energy Blade MK1",
+            "&3能量刀片 MK1",
             "",
             LoreBuilder.powerCharged(0, 1000),
             "",
@@ -29,7 +29,7 @@ public final class Items {
     public static final SlimefunItemStack ENERGY_BLADE_MK2 = new SlimefunItemStack(
             "ENERGY_BLADE_MK2",
             Material.DIAMOND_SWORD,
-            "&3Energy Blade MK2",
+            "&3能量刀片 MK2",
             "",
             LoreBuilder.powerCharged(0, 5000),
             "",
@@ -40,7 +40,7 @@ public final class Items {
     public static final SlimefunItemStack ENERGY_BLADE_MK3 = new SlimefunItemStack(
             "ENERGY_BLADE_MK3",
             Material.DIAMOND_SWORD,
-            "&3Energy Blade MK3",
+            "&3能量刀片 MK3",
             "",
             LoreBuilder.powerCharged(0, 10000),
             "",
@@ -52,9 +52,9 @@ public final class Items {
     public static final SlimefunItemStack BLINDFOLD = new SlimefunItemStack(
             "BLINDFOLD",
             "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTY3YTJmMjE4YTZlNmUzOGYyYjU0NWY2YzE3NzMzZjRlZjliYmIyODhlNzU0MDI5NDljMDUyMTg5ZWUifX19",
-            "Blindfold",
+            "蒙眼布",
             "",
-            "Its dark in here"
+            "这里很暗"
     );
 
     static {
