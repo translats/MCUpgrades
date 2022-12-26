@@ -36,7 +36,7 @@ public class MCUpgrades extends JavaPlugin implements SlimefunAddon {
         itemGroup = new ItemGroup(categoryId, categoryItem);
 
         NamespacedKey researchKey = new NamespacedKey(this, "custom_research");
-        Research research = new Research(researchKey, 112221938_1, "You feel smarter now? :)", 10);
+        Research research = new Research(researchKey, 112221938_1, "你现在觉得更聪明了? :)", 10);
 
         research.register();
 
